@@ -1,17 +1,22 @@
 {% extends 'home/base.html' %}
-{% block title %}Excel {% endblock %}
-{% block session %}Excel {% endblock %}
+{% block title %}Measurement Sheet{% endblock %}
+{% block session %}{{ str }}{% endblock %}
 {% block path %}
-    <span class="user-avatar">Excel</span>
+    <span class="user-avatar">Measurement Sheet/ {{ str }}</span>
 {% endblock %}
 {% block body %}
+    <div class="container">
+        <form method="POST" action="{% url 'home:project_report_details' str %}">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-success" value="Submit">
+        </form>
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <iframe width="100%" height="1000vh"
                     src="https://docs.google.com/spreadsheets/d/1dgCnjuQXb_AuOU7_kxTIPow31jw8DeSjgbqUfdvsx8o/edit#gid=0"></iframe>
         </div>
     </div>
-
 
 {% endblock %}
 

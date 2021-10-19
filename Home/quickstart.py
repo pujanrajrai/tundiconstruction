@@ -1,26 +1,33 @@
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-from pprint import pprint
+from __future__ import print_function
+from googleapiclient.discovery import build
+from google.oauth2 import service_account
 
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+SERVICE_ACCOUNT_FILE = '/Users/tundi/tundiconstruction/Home/tundi-326306-f1a0d57a21e6.json'
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+credentials = None
+credentials = service_account.Credentials.from_service_account_file(
+    SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 
-creds = ServiceAccountCredentials.from_json_keyfile_name(
-    "/Users/tundi/tundiconstruction/Home/tundi-326306-f1a0d57a21e6.json", scope)
+# The ID and range of a sample spreadsheet.
+SAMPLE_SPREADSHEET_ID = '1dgCnjuQXb_AuOU7_kxTIPow31jw8DeSjgbqUfdvsx8o'
 
-client = gspread.authorize(creds)
+service = build('sheets', 'v4', credentials=credentials)
+SAMPLE_RANGE_NAME = 'project'
 
-sheet = client.open("tundiproject").sheet1  # Open the spreadhseet
+# Call the Sheets API
+sheet = service.spreadsheets()
+result = sheet.values().get(spreadsheetId=SAMPLE_SPREADSHEET_ID,
+                            range=SAMPLE_RANGE_NAME).execute()
+import pdb;pdb.set_trace()
 
-data = sheet.get_all_records()  # Get a list of all records
+print(result)
+# values = result.get('values', [])
 #
-# row = sheet.row_values(3)  # Get a specific row
-# col = sheet.col_values(3)  # Get a specific column
-# cell = sheet.cell(1, 2).value  # Get the value of a specific cell
-# #
-# insertRow = ["apple", "ball", "cat"]
-# sheet.append_row(insertRow)  # Insert the list as a row at index 4
-#
-# sheet.update_cell(2,2, "CHANGED")  # Update one cell
-#
-# numRows = sheet.row_count  # Get the number of rows in the sheet
+# if not values:
+#     print('No data found.')
+# else:
+#     print('Name, Major:')
+#     for row in values:
+#         # Print columns A and E, which correspond to indices 0 and 4.
+#         print('%s, %s' % (row[0], row[4]))
+

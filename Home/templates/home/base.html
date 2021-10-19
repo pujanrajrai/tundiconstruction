@@ -37,31 +37,31 @@
     <div class="nano">
         <div class="nano-content">
             <ul>
-                <div class="logo"><a href="index.html">
+                <div class="logo"><a href="#">
                     <span style="font-size: x-large; color: #FFFFFF">Tundi Construction</span></a></div>
                 <li class="label">Main</li>
-                <li><a class="sidebar-sub-toggle"><i class="ti-home"></i>Dashboard</a></li>
+                <li><a href="{% url 'home:home' %}"><i class="ti-home"></i>Dashboard</a></li>
                 <li class="label">Tundi Reports</li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-shopping-cart"></i> Procurement <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html">RFQ Report</a></li>
-                        <li><a href="chart-morris.html">Purchase Order Report</a></li>
-                        <li><a href="chartjs.html">Vendor wise Report</a></li>
+                        <li><a href="#">RFQ Report</a></li>
+                        <li><a href="#">Purchase Order Report</a></li>
+                        <li><a href="#">Vendor wise Report</a></li>
                         <li><a class="sidebar-sub-toggle">Estimated Item Prices with Landed Costs<span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
-                                <li><a href="chart-flot.html">Project</a></li>
-                                <li><a href="chart-morris.html">WAREHOUSE</a></li>
-                                <li><a href="chartjs.html">ITEM GROUP</a></li>
+                                <li><a href="#">Project</a></li>
+                                <li><a href="#">WAREHOUSE</a></li>
+                                <li><a href="#">ITEM GROUP</a></li>
                             </ul>
                         </li>
                         <li><a class="sidebar-sub-toggle"> Actual Item Prices with Landed Costs<span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                             <ul>
-                                <li><a href="chart-flot.html">Project</a></li>
-                                <li><a href="chart-morris.html">Warehouse</a></li>
-                                <li><a href="chartjs.html">ITEM GROUP</a></li>
+                                <li><a href="#">Project</a></li>
+                                <li><a href="#">Warehouse</a></li>
+                                <li><a href="#">ITEM GROUP</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -69,49 +69,50 @@
                 <li><a class="sidebar-sub-toggle"><i class="ti-home"></i> Warehouse <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html">Warehouse Receipt</a></li>
-                        <li><a href="chart-morris.html">Stock Statement (Site wise)</a></li>
-                        <li><a href="chartjs.html">Project wise Material Issue Note</a></li>
-                        <li><a href="chartjs.html">Group wise items report</a></li>
+                        <li><a href="#">Warehouse Receipt</a></li>
+                        <li><a href="#">Stock Statement (Site wise)</a></li>
+                        <li><a href="#">Project wise Material Issue Note</a></li>
+                        <li><a href="#">Group wise items report</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i> Project <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                         <li><a href="{% url 'project:tender_reports' %}">Tendering Report</a></li>
-                        <li><a href="chart-flot.html">Project wise Cost Report</a></li>
-                        <li><a href="chart-morris.html">Management Report</a></li>
-                        <li><a href="chartjs.html">Profit/Loss Report</a></li>
-                        <li><a href="chartjs.html">Project Progress Report</a></li>
-                        <li><a href="chartjs.html">Budgeted Project Costs</a></li>
-                        <li><a href="chartjs.html">Budgeted Activity Costs</a></li>
+                        <li><a href="#">Project wise Cost Report</a></li>
+                        <li><a href="#">Management Report</a></li>
+                        <li><a href="#">Profit/Loss Report</a></li>
+                        <li><a href="#">Project Progress Report</a></li>
+                        <li><a href="#">Budgeted Project Costs</a></li>
+                        <li><a href="#">Budgeted Activity Costs</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-money"></i> Finanace <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html">Banking Master</a></li>
-                        <li><a href="chart-morris.html">Letter Of Credit</a></li>
-                        <li><a href="chartjs.html">Bank Guarantee</a></li>
-                        <li><a href="chartjs.html">Purchase Register (Govt Of Nepal format)</a></li>
-                        <li><a href="chartjs.html">Sales Register (Govt of Nepal format)</a></li>
-                        <li><a href="chartjs.html">VAT Register (Govt of Nepal format)</a></li>
-                        <li><a href="chartjs.html">TDS (Govt of Nepal Format) Register</a></li>
-                        <li><a href="chartjs.html">Creditors Outstanding Summary</a></li>
-                        <li><a href="chartjs.html">Supplier Ledger</a></li>
-                        <li><a href="chartjs.html">Customer Ledger</a></li>
+                        <li><a href="#">Banking Master</a></li>
+                        <li><a href="#">Letter Of Credit</a></li>
+                        <li><a href="#">Bank Guarantee</a></li>
+                        <li><a href="#">Purchase Register (Govt Of Nepal format)</a></li>
+                        <li><a href="#">Sales Register (Govt of Nepal format)</a></li>
+                        <li><a href="#">VAT Register (Govt of Nepal format)</a></li>
+                        <li><a href="#">TDS (Govt of Nepal Format) Register</a></li>
+                        <li><a href="#">Creditors Outstanding Summary</a></li>
+                        <li><a href="#">Supplier Ledger</a></li>
+                        <li><a href="#">Customer Ledger</a></li>
                     </ul>
                 </li>
                 <li><a class="sidebar-sub-toggle"><i class="ti-user"></i> HRMS <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
-                        <li><a href="chart-flot.html">Monthly Salary Register</a></li>
-                        <li><a href="chart-morris.html"> Yearly Salary Register</a></li>
-                        <li><a href="chartjs.html">Payslip</a></li>
+                        <li><a href="#">Monthly Salary Register</a></li>
+                        <li><a href="#"> Yearly Salary Register</a></li>
+                        <li><a href="#">Payslip</a></li>
                     </ul>
                 </li>
-                <li><a href="{% url 'home:sheet' %}"><i class="ti-close"></i> Excel</a></li>
-                <li><a><i class="ti-close"></i> Logout</a></li>
+                <li><a href="{% url 'home:project' %}"><i class="ti-map"></i> Measurement Sheet</a></li>
+                <li><a href="#"><i class="ti-receipt"></i> Project Report</a></li>
+                <li><a href="{% url 'home:logout' %}"><i class="ti-close"></i> Logout</a></li>
             </ul>
         </div>
     </div>
@@ -162,7 +163,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="footer">
-                                            <p>2018 © Admin Board. - <a href="#">example.com</a></p>
+                                            <p>2021 © Admin Board. - <a href="#">Tundi Construction</a></p>
                                         </div>
                                     </div>
                                 </div>
