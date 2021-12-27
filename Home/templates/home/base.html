@@ -110,8 +110,9 @@
                         <li><a href="#">Payslip</a></li>
                     </ul>
                 </li>
-                <li><a href="{% url 'home:project' %}"><i class="ti-map"></i> Measurement Sheet</a></li>
-                <li><a href="#"><i class="ti-receipt"></i> Project Report</a></li>
+{#                <li><a href="{% url 'home:project' %}"><i class="ti-map"></i> Measurement Sheet</a></li>#}
+                <li><a href="{% url 'measurement_sheet:project_list' %}"><i class="ti-map"></i> Measurement Sheet Final</a></li>
+                <li><a href="{% url 'reports:reports' %}"><i class="ti-receipt"></i> Project Report</a></li>
                 <li><a href="{% url 'home:logout' %}"><i class="ti-close"></i> Logout</a></li>
             </ul>
         </div>

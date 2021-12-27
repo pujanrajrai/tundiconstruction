@@ -1,13 +1,13 @@
 from django.urls import path
 from . import views
 
-app_name = 'home'
+app_name = 'measurement_sheet'
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('logout/', views.logout, name='logout'),
-    # path('sheet/', views.sheet, name='sheet'),
-    path('project/', views.project_report, name='project'),
-    path('project/details/<str:t_bcod>/<str:t_cact>/<str:t_cpla>/<str:t_cprj>/<str:t_rabl>', views.project_report_details, name='project_report_details'),
+    path('project', views.project_list, name='project_list'),
+    path('rabill/<str:project>', views.ra_bills, name='rabill'),
+    path('plans/<str:project>/<str:rabill>/<str:rabill_date>', views.plans, name='plans'),
+    path('activity/<str:project>/<str:rabill>/<str:rabill_date>/<str:plan>', views.activity, name='activity'),
+    path('boq/<str:project>/<str:rabill>/<str:rabill_date>/<str:plan>/<str:activity>', views.boq, name='boq'),
+    path('sheet/<str:project>/<str:rabill>/<str:rabill_date>/<str:plan>/<str:activity>/<str:boq>', views.sheet,
+         name='sheet'),
 ]
-# table.t_bcod table.t_cact table.t_cpla table.t_cprj table.t_date table.t_rabl
-# <str:t_bcod>/<str:t_cact>/<str:t_cpla>/<str:t_cprj>/<str:t_date>/<str:t_rabl>

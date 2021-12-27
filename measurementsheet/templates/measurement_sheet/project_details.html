@@ -18,10 +18,10 @@
                             <tr>
                                 <th></th>
                                 <th>Project</th>
-                                <th>RA Bills</th>
-                                <th>Version</th>
-                                <th>Activity</th>
-                                <th>BOQ Code</th>
+                                <th>Description</th>
+{#                                <th>Version</th>#}
+{#                                <th>Activity</th>#}
+{#                                <th>BOQ Code</th>#}
 {#                                <th>Date</th>#}
                             </tr>
                             </tfoot>
@@ -29,10 +29,10 @@
                             <tr>
                                 <th>#</th>
                                 <th>Project</th>
-                                <th>RA Bills</th>
-                                <th>Version</th>
-                                <th>Activity</th>
-                                <th>BOQ Code</th>
+                                <th>Description</th>
+{#                                <th>Version</th>#}
+{#                                <th>Activity</th>#}
+{#                                <th>BOQ Code</th>#}
 {#                                <th>Date</th>#}
                             </tr>
                             </thead>
@@ -42,15 +42,15 @@
                             {% for table in tables %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'home:project_report_details' table.t_bcod table.t_cact table.t_cpla  table.t_cprj table.t_rabl  %}"
+                                        <a href="{% url 'measurement_sheet:rabill' table.t_cprj %}"
                                            class="btn btn-outline-dark btn-view-tender-details">
                                             <i class="ti-arrow-right"></i></a>
                                     </td>
                                     <td>{{ table.t_cprj }}</td>
-                                    <td>{{ table.t_rabl }}</td>
-                                    <td>{{ table.t_cpla }}</td>
-                                    <td>{{ table.t_cact }}</td>
-                                    <td>{{ table.t_bcod }}</td>
+                                    <td>{{ table.t_dsca }}</td>
+{#                                    <td>{{ table.t_cpla }}</td>#}
+{#                                    <td>{{ table.t_cact }}</td>#}
+{#                                    <td>{{ table.t_bcod }}</td>#}
 {#                                    <td>{{ table.t_date }}</td>#}
                                 </tr>
                             {% endfor %}

@@ -1,6 +1,7 @@
 import time
 import pyodbc
 
+
 def sql_connection_fetch(query_set):
     try:
         cnxn = pyodbc.connect(
@@ -39,5 +40,3 @@ def sql_connection_insert(query_set):
     except pyodbc.Error as ex:
         print(ex.args[1])
         return ex.args[1]
-
-

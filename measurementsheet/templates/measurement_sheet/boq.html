@@ -6,7 +6,7 @@
 {% endblock %}
 {% block body %}
     <br>
-    <h5>Project:{{ project_name }}</h5>
+    <h5>Project:{{ project_name }} Rabill: {{ rabill }} Plan: {{ plan }} Activity: {{ activity }}</h5>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -18,11 +18,7 @@
                             <tfoot style="display: table-header-group">
                             <tr>
                                 <th></th>
-                                <th>Ra bills</th>
-                                <th>Description</th>
-                                <th>Certified Bill Date</th>
-                                <th>Submitted Bill Date</th>
-                                <th>Status</th>
+                                <th>BOQ</th>
 {#                                <th>Version</th>#}
 {#                                <th>Activity</th>#}
 {#                                <th>BOQ Code</th>#}
@@ -32,11 +28,7 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Ra bills</th>
-                                <th>Description</th>
-                                <th>Certified Bill Date</th>
-                                <th>Submitted Bill Date</th>
-                                <th>Status</th>
+                                <th>BOQ</th>
 {#                                <th>Version</th>#}
 {#                                <th>Activity</th>#}
 {#                                <th>BOQ Code</th>#}
@@ -49,17 +41,12 @@
                             {% for table in tables %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'measurement_sheet:plans' project_name table.t_rabl %}"
+                                        <a href="{% url 'measurement_sheet:sheet' project_name rabill rabill_date plan activity table.t_bact %}"
                                            class="btn btn-outline-dark btn-view-tender-details">
                                             <i class="ti-arrow-right"></i></a>
                                     </td>
-                                    <td>{{ table.t_rabl }}</td>
-                                    <td>{{ table.t_dsca }}</td>
-                                    <td>{{ table.t_stdt }}</td>
-                                    <td>{{ table.t_crdt }}</td>
-                                    <td>{% if table.t_stat == 1 %}Free{% endif %}
-                                    {% if table.t_stat == 2 %}Actual{% endif %}
-                                    {% if table.t_stat == 3 %}Final{% endif %}</td>
+                                    <td>{{ table.t_bact }}</td>
+
 {#                                    <td>{{ table.t_cpla }}</td>#}
 {#                                    <td>{{ table.t_cact }}</td>#}
 {#                                    <td>{{ table.t_bcod }}</td>#}

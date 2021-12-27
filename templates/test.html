@@ -1,12 +1,12 @@
 {% extends 'home/base.html' %}
 {% block title %}Measurement Sheet{% endblock %}
-{% block session %}{{ str }}{% endblock %}
+{% block session %}{{ t_cprj }}{% endblock %}
 {% block path %}
-    <span class="user-avatar">Measurement Sheet/ {{ str }}</span>
+    <span class="user-avatar">Measurement Sheet/ {{ t_cprj }}</span>
 {% endblock %}
 {% block body %}
     <div class="container">
-        <form method="POST" action="{% url 'home:project_report_details' str %}">
+        <form method="POST" action="{% url 'home:project_report_details' t_bcod t_cact t_cpla t_cprj t_rabl %}">
             {% csrf_token %}
             <input type="submit" class="btn btn-success" value="Submit">
         </form>

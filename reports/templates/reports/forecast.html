@@ -13,60 +13,66 @@
                 <div class="page-title">
                     <h5 class="mb-3">
                         <form method="get" action="{% url 'reports:reports' %}">
-                            <button class="btn btn-outline-success" value="incl" name="btn_click">
+                            <button {% if btn_click == 'incl' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %}value="incl" name="btn_click">
                                 Cumulative Incl.Comm
                             </button>
-                            <button class="btn btn-outline-success" value="excl" name="btn_click">Cumulative
+                            <button{% if btn_click == 'excl' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success" {% endif %}  value="excl" name="btn_click">Cumulative
                                 Excl.Comm
                             </button>
-                            <button class="btn btn-outline-success" value="period" name="btn_click">Period</button>
-                            <button class="btn btn-outline-success" value="forecast" name="btn_click">Forecast</button>
+                            <button{% if btn_click == 'period' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %} value="period" name="btn_click">Period</button>
+                            <button{% if btn_click == 'forecast' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %} value="forecast" name="btn_click">Forecast</button>
                         </form>
                     </h5>
                 </div>
+
                 <div class="bootstrap-data-table-panel">
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered">
                             <tfoot style="display: table-header-group">
                             <tr>
                                 <th>Project</th>
+                                {#                                <th>Description</th>#}
                                 <th>Currency</th>
-                                <th>Incl.Commit Actual</th>
-                                <th>Incl.Commit Earned Value</th>
-                                <th>Incl.Commit Variance</th>
-                                <th>Excl.Commit Actual</th>
-                                <th>Excl Commit Earned Value</th>
-                                <th>Excl Commit Variance</th>
-                                <th>Revenues</th>
+                                <th>Total Budget</th>
+                                <th>Actual Cost</th>
+                                <th>Earned Value</th>
+                                <th>Variance</th>
+                                <th>Forecast Cost</th>
+                                <th>Variance at completion</th>
+                                <th>Forecast Extra Revenues</th>
                             </tr>
                             </tfoot>
                             <thead>
                             <tr>
                                 <th>Project</th>
+                                {#                                <th>Description</th>#}
                                 <th>Currency</th>
-                                <th>Incl.Commit Actual</th>
-                                <th>Incl.Commit Earned Value</th>
-                                <th>Incl.Commit Variance</th>
-
-                                <th>Excl.Commit Actual</th>
-                                <th>Excl Commit Earned Value</th>
-                                <th>Excl Commit Variance</th>
-                                <th>Revenues</th>
+                                <th>Total Budget</th>
+                                <th>Actual Cost</th>
+                                <th>Earned Value</th>
+                                <th>Variance</th>
+                                <th>Forecast Cost</th>
+                                <th>Variance at completion</th>
+                                <th>Forecast Extra Revenues</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for table in tables %}
                                 <tr>
                                     <td>{{ table.t_cprj }}</td>
-                                    <td>NRP</td>
-                                    <td>{{ table.t_amap_1 }}</td>
-                                    <td>{{ table.t_ampp_1 }}</td>
-                                    <td>{{ table.t_ampp_1|sub:table.t_amap_1 }}</td>
-                                    <td>{{ table.t_amap_1 }}</td>
-                                    <td>{{ table.t_ampp_1 }}</td>
-                                    <td>{{ table.t_ampp_1|sub:table.t_amap_1 }}</td>
-                                    <td>{{ table.t_amrp_1 }}</td>
-
+                                    {#                                    <td>{{ table.t_dsca }}</td>#}
+                                    <td>NPR</td>
+                                    <td>{{ table.t_ambg_1 }}</td>
+                                    <td>{{ table.t_amac_1 }}</td>
+                                    <td>{{ table.t_ampm_1 }}</td>
+                                    <td>{{ table.t_ampm_1|sub:table.t_amac_1 }}</td>
+                                    <td>{{ table.t_ampe_1 }}</td>
+                                    <td>amount</td>
+                                    <td>{{ table.t_amrf_1 }}</td>
                                 </tr>
                             {% endfor %}
                             {% if tables|length == 0 %}

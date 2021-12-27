@@ -31,3 +31,4 @@ def tender_details_reports(request, str):
         context['tables'] = table
         context['tender_no'] = trno
         return render(request, 'project/tender_report_details.html', context)
+

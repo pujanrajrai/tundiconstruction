@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 DJANGO_APPS = [
     'Home',
     'project',
+    'reports',
+    'measurementsheet',
 ]
 THIRD_PARTY_APPS = [
 

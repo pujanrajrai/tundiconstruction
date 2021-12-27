@@ -42,7 +42,7 @@
                             {% for table in tables %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'home:project_report_details' table.t_cprj %}"
+                                        <a href="{% url 'home:project_report_details' table.t_bcod table.t_cact table.t_cpla  table.t_cprj table.t_rabl  %}"
                                            class="btn btn-outline-dark btn-view-tender-details">
                                             <i class="ti-arrow-right"></i></a>
                                     </td>

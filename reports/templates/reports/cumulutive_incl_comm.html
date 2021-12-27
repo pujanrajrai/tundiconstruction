@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 {% load custom_tags %}
-{% block title %}Tender Reports {% endblock %}
-{% block session %}Tender Reports {% endblock %}
+{% block title %}Cost Control{% endblock %}
+{% block session %}Cost Control Reports {% endblock %}
 {% block path %}
     <span class="user-avatar">Project</span>
     <span class="user-avatar">/Tender Reports</span>
@@ -13,13 +13,18 @@
                 <div class="page-title">
                     <h5 class="mb-3">
                         <form method="get" action="{% url 'reports:reports' %}">
-                            <button class="btn btn-outline-success"  value="incl" name="btn_click">
+                            <button {% if btn_click == 'incl' or btn_click == '' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %}value="incl" name="btn_click">
                                 Cumulative Incl.Comm
                             </button>
-                            <button class="btn btn-outline-success" value="excl" name="btn_click">Cumulative
-                                Excl.Comm</button>
-                            <button class="btn btn-outline-success"  value="period" name="btn_click">Period</button>
-                            <button class="btn btn-outline-success" value="forecast" name="btn_click">Forecast</button>
+                            <button{% if btn_click == 'excl' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success" {% endif %}  value="excl" name="btn_click">Cumulative
+                                Excl.Comm
+                            </button>
+                            <button{% if btn_click == 'period' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %} value="period" name="btn_click">Period</button>
+                            <button{% if btn_click == 'forecast' %} class="btn btn-success"
+                                    {% else %} class="btn btn-outline-success"{% endif %} value="forecast" name="btn_click">Forecast</button>
                         </form>
                     </h5>
                 </div>
@@ -64,7 +69,7 @@
                                     <td>{{ table.t_ambg_1 }}</td>
                                     <td>{{ table.t_amac_1 }}</td>
                                     <td>{{ table.t_ampm_1 }}</td>
-                                    <td>{{ table.t_ampm_1|sub:table.t_amac_1 }}</td>
+                                    <td>{{ table.t_ampm_1|sub:table.t_amac_1|floatformat }}</td>
                                     <td>{{ table.t_amrs_1 }}</td>
                                     <td></td>
                                 </tr>
